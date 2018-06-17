@@ -1,0 +1,25 @@
+body {
+  margin: 0px;
+  padding: 20px;
+}
+
+/*To overlay the svg image over a raster/png */
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.map-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*zoom to the earth palace*/
+/* #path4643 {
+
+} */
+
+.pointHover {
+  cursor: pointer;
+}
