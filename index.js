@@ -58,11 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const leave = 'fill:white;opacity:0;stroke:blacks;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
 
   legendItems.forEach(el => {
-    el.addEventListener('mouseenter', event => {
-      const {currentTarget} = event;
-      currentTarget.classList.add('pointHover', 'highlight')
+    el.addEventListener('click', event => {
+      // toggling not working?
+      // let x = document.querySelector('#earth-kingdom');
+      // x.style.cssText = x.style.cssText === greenYes ? leave : greenYes
 
-      switch(currentTarget.innerHTML){
+      switch(event.currentTarget.innerHTML){
         case 'Earth Kingdom':
           document.querySelector('#earth-kingdom').style.cssText = greenYes;
           break;
@@ -84,14 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'Eastern Air Temple':
           document.querySelector('#air-temple-E').style.cssText = yellowYes;
       }
+
     })
 
-    el.addEventListener('mouseleave', event => {
-      const {currentTarget} = event;
-      currentTarget.classList.remove('pointHover', 'highlight')
-
+    el.addEventListener('dblclick', event => {
       // How can I refactor this??
-      switch(currentTarget.innerHTML){
+      switch(event.currentTarget.innerHTML){
         case 'Earth Kingdom':
           document.querySelector('#earth-kingdom').style.cssText = leave;
           break;
@@ -113,6 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'Eastern Air Temple':
           document.querySelector('#air-temple-E').style.cssText = leave;
       }
+    })
+
+    el.addEventListener('mouseenter', event => {
+      const {currentTarget} = event;
+      currentTarget.classList.add('pointHover', 'highlight')
+    })
+
+    el.addEventListener('mouseleave', event => {
+      const {currentTarget} = event;
+      currentTarget.classList.remove('pointHover', 'highlight')
     })
   })
 
