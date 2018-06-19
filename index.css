@@ -10,3 +10,35 @@ body {
 .highlight {
   fill: pink;
 }
+
+/* #svg815 {
+  background-color: navy;
+} */
+
+#earth-kingdom {
+  fill: white;
+  fill-opacity: 0;
+  stroke:#000000;
+  stroke-width:0.5;
+  stroke-miterlimit:4;
+  stroke-opacity:1;
+}
+
+#earth-kingdom:hover {
+  fill: green;
+  fill-opacity: 0.5
+}
+
+#water-tribe-N, #water-tribe-S {
+  fill: white;
+  fill-opacity: 0;
+  stroke:#000000;
+  stroke-width:0.5;
+  stroke-miterlimit:4;
+  stroke-opacity:1;
+}
+
+#water-tribe-N:hover, #water-tribe-S:hover {
+  fill: blue;
+  fill-opacity: 0.5
+}

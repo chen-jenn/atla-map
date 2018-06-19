@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dots.forEach(element => {
     element.addEventListener('click', event => {
       const {currentTarget} = event;
-      // This will give the description from the svg element 
+      // This will give the description from the svg element
       alert(currentTarget.querySelector('desc').innerHTML)
     })
   })
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dots.forEach(el => {
     el.addEventListener("mouseenter", event => {
       const {currentTarget} = event;
+      currentTarget.setAttribute('r', 2)
       currentTarget.classList.add('pointHover')
     })
   })
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dots.forEach(el => {
     el.addEventListener("mouseleave", event => {
       const {currentTarget} = event;
+      currentTarget.setAttribute('r', 1.4173229)
       currentTarget.classList.remove('pointHover')
     })
   })
