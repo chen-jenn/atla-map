@@ -35,8 +35,13 @@ body {
 
 #svg815 {
   fill: beige;
-  fill-opacity: 0.25; 
+  fill-opacity: 0.25;
   background-color: #8eabc3;
+}
+
+circle {
+  fill: red;
+  fill-opacity: 1; 
 }
 
 /* #earth-kingdom, #fire-nation, #air-temple-E, #air-temple-W, #air-temple-S, #water-tribe-N, #water-tribe-S {

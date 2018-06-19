@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const legendItems = legend.querySelectorAll('div')
 
   // opacity is ratio to the initial svg opacity
-  legendItems.forEach(el => {
-    const greenYes = 'fill:green;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-    const redYes = 'fill:salmon;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-    const yellowYes = 'fill:yellow;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-    const blueYes = 'fill:blue;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-    const leave = 'fill:white;opacity:0;stroke:blacks;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  const greenYes = 'fill:green;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  const redYes = 'fill:salmon;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  const yellowYes = 'fill:yellow;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  const blueYes = 'fill:blue;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  const leave = 'fill:white;opacity:0;stroke:blacks;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
 
+  legendItems.forEach(el => {
     el.addEventListener('mouseenter', event => {
       const {currentTarget} = event;
       currentTarget.classList.add('pointHover', 'highlight')
