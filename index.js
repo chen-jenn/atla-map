@@ -50,16 +50,69 @@ document.addEventListener('DOMContentLoaded', () => {
   const legend = document.querySelector('.legend')
   const legendItems = legend.querySelectorAll('div')
 
+  // opacity is ratio to the initial svg opacity
   legendItems.forEach(el => {
+    const greenYes = 'fill:green;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+    const redYes = 'fill:salmon;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+    const yellowYes = 'fill:yellow;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+    const blueYes = 'fill:blue;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+    const leave = 'fill:white;opacity:0;stroke:blacks;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+
     el.addEventListener('mouseenter', event => {
       const {currentTarget} = event;
       currentTarget.classList.add('pointHover', 'highlight')
-      //depending on what is inside the legend div, highlight the proper areas on the map 
+
+      switch(currentTarget.innerHTML){
+        case 'Earth Kingdom':
+          document.querySelector('#earth-kingdom').style.cssText = greenYes;
+          break;
+        case 'Fire Nation':
+          document.querySelector('#fire-nation').style.cssText = redYes;
+          break;
+        case 'Northern Water Tribe':
+          document.querySelector('#water-tribe-N').style.cssText = blueYes;
+          break;
+        case 'Southern Water Tribe':
+          document.querySelector('#water-tribe-S').style.cssText = blueYes;
+          break;
+        case 'Southern Air Temple':
+          document.querySelector('#air-temple-S').style.cssText = yellowYes;
+          break;
+        case 'Western Air Temple':
+          document.querySelector('#air-temple-W').style.cssText = yellowYes;
+          break;
+        case 'Eastern Air Temple':
+          document.querySelector('#air-temple-E').style.cssText = yellowYes;
+      }
     })
 
     el.addEventListener('mouseleave', event => {
       const {currentTarget} = event;
       currentTarget.classList.remove('pointHover', 'highlight')
+
+      // How can I refactor this??
+      switch(currentTarget.innerHTML){
+        case 'Earth Kingdom':
+          document.querySelector('#earth-kingdom').style.cssText = leave;
+          break;
+        case 'Fire Nation':
+          document.querySelector('#fire-nation').style.cssText = leave;
+          break;
+        case 'Northern Water Tribe':
+          document.querySelector('#water-tribe-N').style.cssText = leave;
+          break;
+        case 'Southern Water Tribe':
+          document.querySelector('#water-tribe-S').style.cssText = leave;
+          break;
+        case 'Southern Air Temple':
+          document.querySelector('#air-temple-S').style.cssText = leave;
+          break;
+        case 'Western Air Temple':
+          document.querySelector('#air-temple-W').style.cssText = leave;
+          break;
+        case 'Eastern Air Temple':
+          document.querySelector('#air-temple-E').style.cssText = leave;
+      }
     })
   })
 

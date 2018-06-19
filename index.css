@@ -34,38 +34,22 @@ body {
 }
 
 #svg815 {
+  fill: beige;
+  fill-opacity: 0.25; 
   background-color: #8eabc3;
 }
 
-.green {
-  fill: green;
-  fill-opacity: 0.5
-}
-
-#earth-kingdom {
+/* #earth-kingdom, #fire-nation, #air-temple-E, #air-temple-W, #air-temple-S, #water-tribe-N, #water-tribe-S {
   fill: white;
   fill-opacity: 0;
   stroke:#000000;
   stroke-width:0.5;
   stroke-miterlimit:4;
   stroke-opacity:1;
-}
-
-/* #earth-kingdom:hover {
-  fill: green;
-  fill-opacity: 0.5
 } */
 
-#water-tribe-N, #water-tribe-S {
-  fill: white;
-  fill-opacity: 0;
-  stroke:#000000;
-  stroke-width:0.5;
-  stroke-miterlimit:4;
-  stroke-opacity:1;
-}
 
-#water-tribe-N:hover, #water-tribe-S:hover {
+/* #water-tribe-N:hover, #water-tribe-S:hover {
   fill: blue;
   fill-opacity: 0.5
-}
+} */
