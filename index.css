@@ -3,17 +3,44 @@ body {
   padding: 20px;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.legend {
+  padding: 10px;
+  width: 200px;
+  background-color: beige;
+}
+
+.legend > * {
+  font-family: monospace;
+  font-weight: bold;
+  color: white;
+  box-sizing: border-box;
+  background-color: gray;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 10px;
+}
+
 .pointHover {
   cursor: pointer;
 }
 
 .highlight {
+  background-color: #986f1e;
   fill: pink;
 }
 
-/* #svg815 {
-  background-color: navy;
-} */
+#svg815 {
+  background-color: #8eabc3;
+}
+
+.green {
+  fill: green;
+  fill-opacity: 0.5
+}
 
 #earth-kingdom {
   fill: white;
@@ -24,10 +51,10 @@ body {
   stroke-opacity:1;
 }
 
-#earth-kingdom:hover {
+/* #earth-kingdom:hover {
   fill: green;
   fill-opacity: 0.5
-}
+} */
 
 #water-tribe-N, #water-tribe-S {
   fill: white;

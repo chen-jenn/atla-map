@@ -2,16 +2,15 @@
 function clickListener(event){
   let b = event.target.getBBox();
   let svg = document.getElementById('svg815')
-  svg.setAttribute("viewbox", `${b.x} ${b.y} ${b.width} ${b.height}`)
+  svg.setAttribute('viewbox', `${b.x} ${b.y} ${b.width} ${b.height}`)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Polygon chunks
+  // Polygon chunks (something wrong with svg polygon layer)
   const polygons = document.getElementById('g1497').querySelectorAll('path')
   polygons.forEach(element => {
     element.addEventListener('mouseenter', event => {
       const {currentTarget} = event;
-      //won't work for now because of inline styling
       currentTarget.classList.add('highlight')
     })
 
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       currentTarget.classList.remove('highlight')
     })
   })
-
 
   // Dot locations
   const dots = document.querySelectorAll('circle')
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   dots.forEach(el => {
-    el.addEventListener("mouseenter", event => {
+    el.addEventListener('mouseenter', event => {
       const {currentTarget} = event;
       currentTarget.setAttribute('r', 2)
       currentTarget.classList.add('pointHover')
@@ -41,10 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   dots.forEach(el => {
-    el.addEventListener("mouseleave", event => {
+    el.addEventListener('mouseleave', event => {
       const {currentTarget} = event;
       currentTarget.setAttribute('r', 1.4173229)
       currentTarget.classList.remove('pointHover')
+    })
+  })
+
+  // Legend buttons
+  const legend = document.querySelector('.legend')
+  const legendItems = legend.querySelectorAll('div')
+
+  legendItems.forEach(el => {
+    el.addEventListener('mouseenter', event => {
+      const {currentTarget} = event;
+      currentTarget.classList.add('pointHover', 'highlight')
+      //depending on what is inside the legend div, highlight the proper areas on the map 
+    })
+
+    el.addEventListener('mouseleave', event => {
+      const {currentTarget} = event;
+      currentTarget.classList.remove('pointHover', 'highlight')
     })
   })
 
