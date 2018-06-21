@@ -30,7 +30,8 @@ body {
 
 .highlight {
   background-color: #986f1e;
-  fill: pink;
+  fill: red;
+  fill-opacity: 0.5;
 }
 
 #svg815 {
@@ -45,10 +46,10 @@ circle {
 }
 
 /* This ID is for the polygons layer */
-/* #g1497 {
+#g1497 {
   fill: red;
   fill-opacity: 0;
-} */
+}
 
 /* #earth-kingdom, #fire-nation, #air-temple-E, #air-temple-W, #air-temple-S, #water-tribe-N, #water-tribe-S {
   fill: white;

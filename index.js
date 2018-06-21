@@ -6,8 +6,9 @@ function clickListener(event){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Polygon chunks (something wrong with svg polygon layer)
-  const polygons = document.getElementById('g1497').querySelectorAll('path')
+  // Polygons
+  // Select for just the polygons with ID beginning with 'p-'
+  const polygons = document.getElementById('g1497').querySelectorAll("[id^='p-']")
   polygons.forEach(element => {
     element.addEventListener('mouseenter', event => {
       const {currentTarget} = event;
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dots.forEach(element => {
     element.addEventListener('click', event => {
       const {currentTarget} = event;
-      // This will give the description from the svg element
+      // Get the description from the svg element
       alert(currentTarget.querySelector('desc').innerHTML)
     })
   })
@@ -51,11 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const legendItems = legend.querySelectorAll('div')
 
   // opacity is ratio to the initial svg opacity
-  const greenYes = 'fill:green;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-  const redYes = 'fill:salmon;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-  const yellowYes = 'fill:yellow;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-  const blueYes = 'fill:blue;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
-  const leave = 'fill:white;opacity:0;stroke:blacks;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  const colours = [
+    'fill:green;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;',
+    'fill:salmon;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;',
+    'fill:yellow;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;',
+    'fill:blue;opacity:2;stroke:black;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;',
+    'fill:white;opacity:0;stroke:blacks;stroke-width:0.5;stroke-miterlimit:4;stroke-opacity:1;'
+  ]
 
   legendItems.forEach(el => {
     el.addEventListener('click', event => {
@@ -65,25 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       switch(event.currentTarget.innerHTML){
         case 'Earth Kingdom':
-          document.querySelector('#earth-kingdom').style.cssText = greenYes;
+          document.querySelector('#earth-kingdom').style.cssText = colours[0];
           break;
         case 'Fire Nation':
-          document.querySelector('#fire-nation').style.cssText = redYes;
+          document.querySelector('#fire-nation').style.cssText = colours[1];
           break;
         case 'Northern Water Tribe':
-          document.querySelector('#water-tribe-N').style.cssText = blueYes;
+          document.querySelector('#water-tribe-N').style.cssText = colours[3];
           break;
         case 'Southern Water Tribe':
-          document.querySelector('#water-tribe-S').style.cssText = blueYes;
+          document.querySelector('#water-tribe-S').style.cssText = colours[3];
           break;
         case 'Southern Air Temple':
-          document.querySelector('#air-temple-S').style.cssText = yellowYes;
+          document.querySelector('#air-temple-S').style.cssText = colours[2];
           break;
         case 'Western Air Temple':
-          document.querySelector('#air-temple-W').style.cssText = yellowYes;
+          document.querySelector('#air-temple-W').style.cssText = colours[2];
           break;
         case 'Eastern Air Temple':
-          document.querySelector('#air-temple-E').style.cssText = yellowYes;
+          document.querySelector('#air-temple-E').style.cssText = colours[2];
       }
 
     })
@@ -92,25 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
       // How can I refactor this??
       switch(event.currentTarget.innerHTML){
         case 'Earth Kingdom':
-          document.querySelector('#earth-kingdom').style.cssText = leave;
+          document.querySelector('#earth-kingdom').style.cssText = colours[4];
           break;
         case 'Fire Nation':
-          document.querySelector('#fire-nation').style.cssText = leave;
+          document.querySelector('#fire-nation').style.cssText = colours[4];
           break;
         case 'Northern Water Tribe':
-          document.querySelector('#water-tribe-N').style.cssText = leave;
+          document.querySelector('#water-tribe-N').style.cssText = colours[4];
           break;
         case 'Southern Water Tribe':
-          document.querySelector('#water-tribe-S').style.cssText = leave;
+          document.querySelector('#water-tribe-S').style.cssText = colours[4];
           break;
         case 'Southern Air Temple':
-          document.querySelector('#air-temple-S').style.cssText = leave;
+          document.querySelector('#air-temple-S').style.cssText = colours[4];
           break;
         case 'Western Air Temple':
-          document.querySelector('#air-temple-W').style.cssText = leave;
+          document.querySelector('#air-temple-W').style.cssText = colours[4];
           break;
         case 'Eastern Air Temple':
-          document.querySelector('#air-temple-E').style.cssText = leave;
+          document.querySelector('#air-temple-E').style.cssText = colours[4];
       }
     })
 
