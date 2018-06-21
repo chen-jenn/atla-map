@@ -10,7 +10,7 @@ body {
 .legend {
   padding: 10px;
   width: 200px;
-  background-color: beige;
+  background-color: tan;
 }
 
 .legend > * {
@@ -41,8 +41,14 @@ body {
 
 circle {
   fill: red;
-  fill-opacity: 1; 
+  fill-opacity: 1;
 }
+
+/* This ID is for the polygons layer */
+/* #g1497 {
+  fill: red;
+  fill-opacity: 0;
+} */
 
 /* #earth-kingdom, #fire-nation, #air-temple-E, #air-temple-W, #air-temple-S, #water-tribe-N, #water-tribe-S {
   fill: white;
