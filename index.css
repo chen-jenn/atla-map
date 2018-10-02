@@ -51,6 +51,10 @@ circle {
   fill-opacity: 0;
 }
 
+#ek-east {
+  fill: none; 
+}
+
 /* #earth-kingdom, #fire-nation, #air-temple-E, #air-temple-W, #air-temple-S, #water-tribe-N, #water-tribe-S {
   fill: white;
   fill-opacity: 0;
